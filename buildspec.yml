@@ -1,13 +1,15 @@
 version: 0.2
 phases:
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - echo Entered the build phase...
-      - mvn clean package
-
+      - npm install
+      - npm run build
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo Build completed on
 artifacts:
   files:
    - target/Customer.jar
